@@ -26,6 +26,7 @@ const { createApp } = Vue
 createApp({
     data(){
         return{
+            
             tasks: [
                 {
                     text: "Pulire la casa",
@@ -43,11 +44,17 @@ createApp({
                     text: "Cucinare il pranzo",
                     done: false,
                 },
+                {
+                    text: "Scrivere codice",
+                    done: false,
+                },
             ]
 
         }
     },
     methods :{
-
+        removeTask(){
+            
+        }
     }
 }).mount("#app")

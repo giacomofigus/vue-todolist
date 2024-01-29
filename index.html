@@ -46,8 +46,17 @@
                  v-for="(element, index) in tasks"
                  :key="index"
                  >
-                    <span>{{ element.text }}</span>
-                    <i class="fa-solid fa-xmark text-danger fs-4"></i>
+                    <span
+                    class="fs-5"
+                    :class="{'text-decoration-line-through' : element.done}"
+                    >
+                        {{ element.text }}
+                    </span>
+                    <i 
+                    class="fa-solid fa-xmark text-danger fs-4"
+                    @click="removeTask"
+                    >
+                    </i>
                 </li>
             </ul>
         </div>
