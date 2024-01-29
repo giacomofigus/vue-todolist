@@ -25,6 +25,7 @@
                     aria-describedby="helpId"
                     placeholder="Add new task..."
                     v-model="newTask"
+                    @keyup.enter="addTask"
                 />
             </div>
 
