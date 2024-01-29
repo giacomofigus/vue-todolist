@@ -53,7 +53,7 @@ createApp({
         }
     },
     methods :{
-        // MILESTONE 1
+        // MILESTONE 2
         removeTask(index){
             this.tasks.splice(index, 1)
         }
