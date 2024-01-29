@@ -43,9 +43,13 @@
         </div>
 
         <div class="bg-secondary mt-5 text-light">
-            <ul class="p-0 px-2">
+            <ul 
+            class="p-0 px-2"
+            >
+                
                 <li
                  class="d-flex align-items-center justify-content-between border-bottom py-3"
+                 v-if="tasks != ''"
                  v-for="(element, index) in tasks"
                  :key="index"
                  >
@@ -54,6 +58,7 @@
                     <span
                     class="fs-5"
                     :class="{'text-decoration-line-through' : element.done}"
+                    @click="activateDone(index)"
                     >
                         {{ element.text }}
                     </span>
@@ -62,6 +67,13 @@
                     @click="removeTask(index)"
                     >
                     </i>
+                </li>
+
+                <li 
+                class="d-flex align-items-center justify-content-between py-3"
+                v-else
+                >
+                    <span>Non ci sono task</span>
                 </li>
             </ul>
         </div>

@@ -60,15 +60,18 @@ createApp({
 
         // MILESTONE 3
         addTask(){
-
             if(this.newTask !== ""){
                 this.tasks.push({
                     text: this.newTask,
                     done: false,
                 })
             }
-            
             this.newTask=""
+        },
+
+        // BONUS 2
+        activateDone(index){
+            this.tasks[index].done = !this.tasks[index].done  
         }
     }
 }).mount("#app")
