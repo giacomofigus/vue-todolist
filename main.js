@@ -26,7 +26,7 @@ const { createApp } = Vue
 createApp({
     data(){
         return{
-            
+            newTask: '',
             tasks: [
                 {
                     text: "Pulire la casa",
@@ -56,6 +56,19 @@ createApp({
         // MILESTONE 2
         removeTask(index){
             this.tasks.splice(index, 1)
+        },
+
+        // MILESTONE 3
+        addTask(){
+
+            if(this.newTask !== ""){
+                this.tasks.push({
+                    text: this.newTask,
+                    done: false,
+                })
+            }
+            
+            this.newTask=""
         }
     }
 }).mount("#app")
