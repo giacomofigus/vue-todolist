@@ -14,7 +14,7 @@
     
     <h1 class="text-light text-center ">ToDoList</h1>
 
-    <main class="container border mt-5" id="app">
+    <main class="container mt-5" id="app">
         <div class="row">
             <div class="mb-3 col-10">
                 <input
@@ -39,11 +39,15 @@
             </div>
         </div>
 
-        <div class="bg-secondary mt-5 text-light p-2">
-            <ul class="p-0">
-                <li class="d-flex align-items-center justify-content-between border-bottom py-2">
-                    <span>ciaos</span>
-                    <i class="fa-solid fa-xmark text-danger"></i>
+        <div class="bg-secondary mt-5 text-light">
+            <ul class="p-0 px-2">
+                <li
+                 class="d-flex align-items-center justify-content-between border-bottom py-3"
+                 v-for="(element, index) in tasks"
+                 :key="index"
+                 >
+                    <span>{{ element.text }}</span>
+                    <i class="fa-solid fa-xmark text-danger fs-4"></i>
                 </li>
             </ul>
         </div>
